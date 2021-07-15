@@ -75,14 +75,14 @@ then add this to the notificationCompat.builder constructor
 
 ```
 //set an action button
-        Intent actionIntent = new Intent(this, MainActivity.class);
+        Intent actionIntent = new Intent(this, MainActivity.class); //MainActivity.class needs to be set to a broadcast receiver class
         actionIntent.setAction("big action");
         actionIntent.putExtra("extraID",0);
         //getBroadcast method does some weird background stuff.s
         PendingIntent actionIntentPending = PendingIntent.getBroadcast(this,0,actionIntent,0);
 ```
+see this [link](https://developer.android.com/guide/components/broadcasts) for details on a broadcast receiver class. (app functioning in the background)
 then add this to the NotificationCompat.Builder constructor
 ```
-
 .addAction(R.drawable.image2,"action BOI",actionIntentPending);
 ```
