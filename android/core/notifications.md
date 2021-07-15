@@ -1,5 +1,8 @@
 [guide](https://developer.android.com/training/notify-user/build-notification)
 
+
+# create a notification
+
 ## calling the functions
 
 ```
@@ -48,5 +51,38 @@ public void createNotificationChannel(){
     }
 ```
 
+
+# adding actions
+
+## adding a tap action
+
+```
+ //set the notification's tap action
+        Intent intent = new Intent(this,MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this,0,intent,0);
+```
+
+then add this to the notificationCompat.builder constructor
+
+```
+//Set intent that fires when notification is tapped
+                .setContentIntent(pendingIntent)
+                .setAutoCancel(true)
+```
+
 ## creating action buttons
 
+```
+//set an action button
+        Intent actionIntent = new Intent(this, MainActivity.class);
+        actionIntent.setAction("big action");
+        actionIntent.putExtra("extraID",0);
+        //getBroadcast method does some weird background stuff.s
+        PendingIntent actionIntentPending = PendingIntent.getBroadcast(this,0,actionIntent,0);
+```
+then add this to the NotificationCompat.Builder constructor
+```
+
+.addAction(R.drawable.image2,"action BOI",actionIntentPending);
+```
