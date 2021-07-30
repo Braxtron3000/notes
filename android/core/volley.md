@@ -1,8 +1,14 @@
 # Volley
 
-volley uses http to make connections and schedule stuff using threads. It's recommended to create a requestqueue using a singleton so that it establishes one connection throughout the lifecycle of the activity.
+volley uses http to make connections and schedule stuff using threads. It's recommended to create a requestqueue using a singleton so that it establishes one connection throughout the lifecycle of the activity. It is recommended not to use volley for images or videos or other large files. For that possibly look into java HTTPURLCONNECTION object.
 
-here's what it looks like
+implement into module gradle
+
+```
+implementation 'com.android.volley:volley:1.2.0'
+```
+
+here's what it looks like. make sure you use the correct url the api providers specify! I did this wrong for a while then realized it required http: at the front!
 
 ```
 RequestQueue queue = Volley.newRequestQueue(context);
@@ -22,7 +28,5 @@ RequestQueue queue = Volley.newRequestQueue(context);
             }
         });
 
-
-        //queue.add(stringRequest);
         Volley.newRequestQueue(context).add(jsonObjectRequest);
 ```
