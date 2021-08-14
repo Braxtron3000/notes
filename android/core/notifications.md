@@ -19,7 +19,7 @@ createNotificationChannel();
 ```
 public void createNotification() {
 
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, getString(R.string.channel_name))
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(Mainactivity.this, getString(R.string.channel_name))
                 .setSmallIcon(R.drawable.image)
                 .setContentTitle("HELLO WORLD")
                 .setContentText("here's what I'm saying")
@@ -78,7 +78,7 @@ then add this to the notificationCompat.builder constructor
         Intent actionIntent = new Intent(this, MainActivity.class); //MainActivity.class needs to be set to a broadcast receiver class
         actionIntent.setAction("big action");
         actionIntent.putExtra("extraID",0);
-        //getBroadcast method does some weird background stuff.s
+        //getBroadcast method does some weird background stuff
         PendingIntent actionIntentPending = PendingIntent.getBroadcast(this,0,actionIntent,0);
 ```
 see this [link](https://developer.android.com/guide/components/broadcasts) for details on a broadcast receiver class. (app functioning in the background)

@@ -9,6 +9,7 @@
 **link to guides**
 
 [github guides](https://guides.github.com/features/mastering-markdown/)
+[or a a better guide](https://www.markdownguide.org/basic-syntax/)
 
 
 # **note taking process**
