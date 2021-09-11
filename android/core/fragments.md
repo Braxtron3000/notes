@@ -13,13 +13,14 @@ fragments must be hosted by an activity. they can also have subfragments
 
 add a framelayout. it's ok if some of the stuff isn't auto suggested. It didn't suggest it to me but it still compiled fine regardless
 
+```
 <FrameLayout
         android:id="@+id/fragment_container"
         android:name="BlankFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout="@layout/fragment_blank" />
-
+```
 
 # using jetpack (much easier)
 

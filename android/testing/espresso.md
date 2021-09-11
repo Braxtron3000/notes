@@ -29,7 +29,7 @@ there's also like a ton of libraries that esspresso offers for specification of 
 >androidTestImplementation 'androidx.test:runner:1.1.0' <br>
 >androidTestImplementation 'androidx.test:rules:1.1.0'
   
-3. set instrumentation runner
+3. set instrumentation runner in defaultConfig
 
 > testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -60,6 +60,8 @@ ViewAssertions | asserts the state of the currently selected view.
 
 
 ## a basic example
+
+add a class to the java package that has (androidTest)
 
 ```
 @RunWith(AndroidJUnit4.class)
